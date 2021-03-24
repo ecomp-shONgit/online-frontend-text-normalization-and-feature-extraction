@@ -3,7 +3,7 @@
 
 	<head>
         <meta charset="utf-8" />
-        <title>T N D (D)</title>
+        <title>O T N D (D)</title>
         <meta name="description" content="text norm  decomposition tool" />
         <meta name="author" content="schubert, kahl" />
         <script type="text/javascript" src="textnorm.js"></script> 
@@ -19,7 +19,7 @@
     <h1>1 - NORMALIZATION</h1>
         (Please check <a href="http://ecomparatio.net/~khk/NORM-DECOMP-DIST/textnorm.html">http://ecomparatio.net/~khk/NORM-DECOMP-DIST/textnorm.html</a> to see some examples of how the selection would work.)
         <h2>1.1 Unicode normalization</h2>
-        (Select one, it is the normalization of the output. During the normalization steps a nother unicode normalizationmaybe needed.)<br>
+        (Select one; it is the normalization of the output. During other normalization steps another unicode normalization maybe used.)<br>
         Unicode NFD: <input type="checkbox" id="nfdbutt"><br>
         Unicode NFC: <input type="checkbox" id="nfcbutt"><br>
         Unicode NFKD: <input type="checkbox" id="nfkdbutt"><br>
@@ -33,36 +33,36 @@
         Text output latin j-i: <input type="checkbox" id="ji"> (repaces all j with i)</br>
 
         <h2>1.3 Markup / Format</h2>
-        Without markup: <input type="checkbox" id="womarkup"> (input a string and get it pack with markup removed)</br>
-        Delete punctuation: <input type="checkbox" id="delpunktu"> (takes string and returns the string without)</br>
+        Without markup: <input type="checkbox" id="womarkup"> (input a string and get it back with markup (html / xml) removed)</br>
+        Delete punctuation: <input type="checkbox" id="delpunktu"> (takes string and returns the string without punctuation)</br>
         Without newline: <input type="checkbox" id="delnewl"> (input string and get it back with linebreaks removed)</br>
 
 
         <h2>1.4 Word  level conversions</h2>
-        Elision expansion: <input type="checkbox" id="elisions"> (given a text, if this is an elusion it will be expanded)<br>
+        Elision expansion: <input type="checkbox" id="elisions"> (elusion it will be expanded)<br>
         Alpha privativum  / copulativum: <input type="checkbox" id="alphapriv"> (takes utf8 greek and splits the alpha privativum and copulativum from wordforms)</br>
-        Text output without numbering: <input type="checkbox" id="delnumber"> (takes string return string without the edition numbering i.e. [2])</br>
-        Text output no hypenation: <input type="checkbox" id="hyph"> (input array of words removes hyphenation)</br>
+        Text output without numbering: <input type="checkbox" id="delnumber"> (takes string, return string without the edition numbering i.e. [2])</br>
+        Text output no hypenation: <input type="checkbox" id="hyph"> (input string removes hyphenation)</br>
 
 
         <h2>1.5 Single normalization steps</h2>
-        Iota sub to ad: <input type="checkbox" id="iota"> (takes greek utf8 string and repleces jota subscriptum with jota ad scriptum)</br>
+        Iota sub to ad: <input type="checkbox" id="iota"> (takes greek utf8 string and repleces iota subscriptum with iota ad scriptum)</br>
         Text output tailing sigma uniform: <input type="checkbox" id="sigma"> (equalize tailing sigma)</br>
 
         Text output without diacritics: <input type="checkbox" id="deldiak"> (replaces diacritics)</br>
 
         Text output without some signs: <input type="checkbox" id="unkown"> (delete some to the programmer unknown signs: †, *,⋖,#)</br>
-        Text output without ligature: <input type="checkbox" id="ligatu"> (takes a string return string with ligatures turned to single letters)</br>
-        Text output equal case: <input type="checkbox" id="eqcase"> (input a string and get it bach with all small case letters)</br>
-        Text output no brackets: <input type="checkbox" id="delbrackets"> (input stringa nd get it back with no brackets)</br>
+        Text output without ligature: <input type="checkbox" id="ligatu"> (takes a string, return string with ligatures turned to single letters)</br>
+        Text output equal case: <input type="checkbox" id="eqcase"> (input a string and get it back with all small case letters)</br>
+        Text output no brackets: <input type="checkbox" id="delbrackets"> (input string and get it back with no brackets)</br>
 
 
 
         <h2>1.6 Combinations</h2>
-        (Select one of the combined normalization functions, and none of the single steps is used and the word level conversions.)</br>
+        (Select one of the combined normalization functions (none of the single steps is used).)</br>
         Text output basic norm: <input type="checkbox" id="basictextnorm"> (basic equalization and hypenation reversal)</br>
-        Text output all deleted: <input type="checkbox" id="delall"> (deletes UV, klammern, sigma, grkl, umbrüche, ligaturen, interpunktion, edition numbering, unknown signs, diakritika)</br>
-        Text output a combination of steps: <input type="checkbox" id="combi3"> (diacritics disambiguation, normalization, hyphenation removal, linebreak to space, punctuation separation and bracket removal)</br>
+        Text output all deleted: <input type="checkbox" id="delall"> (deletes UV/JI, brackets, sigma, lower, hyphenation, ligatures, punctuation, edition numbering, unknown signs, diakritics)</br>
+        Text output is a combination of steps: <input type="checkbox" id="combi3"> (diacritics disambiguation, normalization, hyphenation removal, linebreak to space, punctuation separation and bracket removal)</br>
 
         <h2>1.7 Translitteration</h2>
         (Select one of the transliterations.)<br>
@@ -74,15 +74,15 @@
         (If more decompositions are selected, than more output file are generated. Check <a href="http://ecomparatio.net/~khk/NORM-DECOMP-DIST/zerl.html">http://ecomparatio.net/~khk/NORM-DECOMP-DIST/zerl.html</a> for some examples to see how it will work.)
 
         <h2>2.1 Word level decomposition</h2>
-        Separation of diakritics:  <input type="checkbox" id="sepdiak"> (takes array of letters and returns array of array of diakritica and array of letters)</br>
+        Separation of diakritics:  <input type="checkbox" id="sepdiak"> (takes string and returns array of array of diakritica and array of letters)</br>
 
-        Ohne Konsonanten: <input type="checkbox" id="wconsos"> ()<br>
+        Without consonants: <input type="checkbox" id="wconsos"> (string without consonants)<br>
 
-        Ohne Vokale: <input type="checkbox" id="wvocal"> ()<br>
+        Without vowels: <input type="checkbox" id="wvocal"> (string without vowels)<br>
 
-        Kleine Wörter: <input type="checkbox" id="justklein"> ()<br>
+        Small words: <input type="checkbox" id="justklein"> (string with just small words (stopwords))<br>
     
-        Große Wörter: <input type="checkbox" id="justgrosz"> ()<br>
+        Big words: <input type="checkbox" id="justgrosz"> (string with just big words (not stopwords))<br>
     
 
         <h2>2.2 General N-Gram decomposition</h2>
@@ -92,10 +92,10 @@
                     
                     <option value="0">Word level (groups of words)</option>
                     <option value="1">Sign level of words</option>
-                    <option value="2">Signs of whole string (inc. space characters)</option>
+                    <option value="2">Signs of whole string (inclu. space characters)</option>
                     </select><br>
 
-        N: <input type="text" id="nofgram"><br>
+        N: <input type="text" id="nofgram" value="3"><br>
         Padding: <select id="padsel">
                  <option value="0">No</option>
                  <option value="1">Yes</option>
@@ -104,14 +104,14 @@
 
 
         <h2>2.3 Special decompositions (fixed size)</h2>
-        Pseudosilben: <input type="checkbox" id="silb"></br>
-        Kopf-Körper-Coda I: <input type="checkbox" id="kkc1"><br>
-        Partitionen (Kopf-Körper-Coda II): <input type="checkbox" id="kkc2"><br>
+        Pseudo-syllables: <input type="checkbox" id="silb"></br>
+        Head-body-Coda I: <input type="checkbox" id="kkc1"><br>
+        All partitions (Head-body-Coda II): <input type="checkbox" id="kkc2"><br>
    
 
 
         <h2>2.4 Heuristik</h2>
-        Als flache Nachbarschaft: <input type="checkbox" id="nachbarsch"><br>
+        Flat neighborhood: <input type="checkbox" id="nachbarsch"><br>
     
         
 
